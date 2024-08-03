@@ -1,14 +1,28 @@
-import React from 'react'
-import styled from 'styled-components'
+import styled from "styled-components";
+import background from '../images/login-background.jpg';
+import ctaOne from '../images/cta-logo-one.svg'
+import ctaTwo from '../images/cta-logo-two.png'
+
 const Login = () => {
   return (
     <Container>
-        <Content>
-            <BgImage/>
-        </Content>
+      <Content>
+        <CTA>
+          <CTALogoOne src={ctaOne} alt="" />
+          <SignUp>GET ALL THERE</SignUp>
+          <Description>
+            Get Premier Access to Raya and the Last Dragon for an additional fee
+            with a Disney+ subscription. As of 03/26/21, the price of Disney+
+            and The Disney Bundle will increase by $1.
+          </Description>
+          <CTALogoTwo src={ctaTwo} alt="" />
+        </CTA>
+        <BgImage />
+      </Content>
     </Container>
-  )
-}
+  );
+};
+
 const Container = styled.section`
   overflow: hidden;
   display: flex;
@@ -33,10 +47,11 @@ const Content = styled.div`
 
 const BgImage = styled.div`
   height: 100%;
+  width: 100%;
   background-position: top;
   background-size: cover;
   background-repeat: no-repeat;
-  background-image: url("/images/login-background.jpg");
+  background-image: url(${background});
   position: absolute;
   top: 0;
   right: 0;
@@ -70,7 +85,7 @@ const SignUp = styled.a`
   padding: 16.5px 0;
   border: 1px solid transparent;
   border-radius: 4px;
-
+  cursor: pointer;
   &:hover {
     background-color: #0483ee;
   }
@@ -92,4 +107,4 @@ const CTALogoTwo = styled.img`
   width: 100%;
 `;
 
-export default Login
+export default Login;
