@@ -1,10 +1,16 @@
-// import logo from './logo.svg';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
+import Login from './Components/Login';
 
 function App() {
   return (
     <div className="App">
-      <h2>Test</h2>
+      <Router>
+        <Routes>
+          <Route path='/' element={<Login />}>
+          </Route>
+        </Routes>
+      </Router>
     </div>
   );
 }
